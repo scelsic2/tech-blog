@@ -1,0 +1,36 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "A tech blog where users can write blogposts and comment on other user's blogposts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "seed": "node ./config/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scelsic2/tech-blog.git"
+  },
+  "keywords": [
+    "technology",
+    "tech",
+    "blog"
+  ],
+  "author": "Cassandra R. Scelsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scelsic2/tech-blog/issues"
+  },
+  "homepage": "https://github.com/scelsic2/tech-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.2.3",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.0"
+  }
+}

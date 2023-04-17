@@ -1,0 +1,38 @@
+    <header>
+        <div class="title">
+          <h1>techUP</h1>
+          <p>The best way to keep UP in tech!</p>   
+        </div>
+        
+    <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+    </nav>
+    </header>
+
+    {{!-- <section class="posts">
+        <div class="post">
+            <div class="post-title-and-info">
+                <h4>Post Title</h4>
+                <p>User Info</p>
+            </div>
+            <div class="post-content">Here is the text of my post!</div>
+        </div>
+    </section> --}}
+    
+    <section class="posts-body">
+       {{#each blogPost}}
+        <div class="post-wrapper">
+            <div class="post">
+                <div class="post-title-and-info">
+                    <h4>{{this.title}}</h4>
+                    <p>{{this.userName}}</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>{{this.text}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </section>
