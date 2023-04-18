@@ -25,6 +25,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - https://www.w3schools.com/css/css3_variables.asp
 - https://sequelize.org/docs/v7/other-topics/other-data-types/
 - https://www.w3schools.com/tags/att_textarea_maxlength.asp
+- https://www.youtube.com/watch?v=hKYjSgyCd60
 
 ## License
 
