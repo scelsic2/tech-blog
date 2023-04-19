@@ -1,6 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const view_routes = require('./controllers/view_routes');
+const auth_routes = require('./controllers/auth_routes');
+const private_routes = require('./controllers/private_routes');
 const db = require('./config/connection');
 const { engine } = require('express-handlebars');
 const session = require("express-session");
@@ -28,14 +31,14 @@ const Session = sequelize.define("Session", {
 })
 
 app.use(session({
-  secret: "exploding-kittens",
-  store: new SequelizeStore({
-    db: sequelize,
-    table: "Session",
-    checkExpirationInterval: 15 * 60 * 1000,
-    expiration: 24 * 60 * 60 * 1000,
-  }),
-  resave:false,
+  secret: process.env.SESSION_SECRET,
+  // store: new SequelizeStore({
+  //   db: sequelize,
+  //   table: "Session",
+  //   checkExpirationInterval: 15 * 60 * 1000,
+  //   expiration: 24 * 60 * 60 * 1000,
+  // }),
+  resave: false,
   saveUninitialized: false
 }))
 
@@ -54,7 +57,7 @@ app.engine('hbs', engine({
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
-app.use('/', view_routes);
+app.use('/', [view_routes, auth_routes, private_routes]);
 
 db.sync().then(() => {
   app.listen(PORT, () => console.log('Server started on port %s', PORT))
