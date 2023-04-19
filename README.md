@@ -27,6 +27,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - https://www.w3schools.com/tags/att_textarea_maxlength.asp
 - https://www.youtube.com/watch?v=hKYjSgyCd60
 - https://github.com/jdtdesigns/basic_mvc_auth_example
+- https://www.w3schools.com/howto/howto_css_form_icon.asp
 
 ## License
 

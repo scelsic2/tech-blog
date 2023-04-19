@@ -11,7 +11,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-a {
+nav a {
     color: var(--lightest);
 }
 
@@ -26,6 +26,11 @@ header {
     background-color: var(--darker);
     padding: 20px;
     margin-bottom: 30px;
+}
+
+.posts-body a{
+    color: var(--darkest);
+    text-decoration: none;
 }
 
 .title {
@@ -59,4 +64,61 @@ nav a {
 .post-content {
     background-color: var(--lightest);
     padding: 10px;
+}
+
+
+form {
+    margin: auto;
+    width: 30%;
+}
+
+.login {
+    color: var(--lightest);
+    text-align: center;
+    padding: 15px;
+}
+/* https://www.w3schools.com/howto/howto_css_form_icon.asp */
+
+* {box-sizing: border-box;}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+/* .icon {
+  padding: 10px;
+  background: var(--darker);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+} */
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid var(--darker);
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: var(--darker);
+  color: var(--lightest);
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
 }
