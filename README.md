@@ -26,6 +26,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - https://sequelize.org/docs/v7/other-topics/other-data-types/
 - https://www.w3schools.com/tags/att_textarea_maxlength.asp
 - https://www.youtube.com/watch?v=hKYjSgyCd60
+- https://github.com/jdtdesigns/basic_mvc_auth_example
 
 ## License
 
