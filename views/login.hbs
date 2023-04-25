@@ -6,14 +6,14 @@
         
     <nav>
         <a href="/">Home</a>
-        <a href="/private/dashboard">Dashboard</a>
-        <a href="/auth/login">Login</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
     </nav>
     </header>
 
     {{!-- https://www.w3schools.com/howto/howto_css_form_icon.asp --}}
 
-<form>
+<form method="POST" action="/login">
 {{!-- <form action="/action_page.php"> --}}
   <h2 class="login">Login</h2>
  
@@ -24,7 +24,7 @@
 
   <div class="input-container">
     {{!-- <i class="fa fa-key icon"></i> --}}
-    <input class="input-field" type="password" placeholder="Password" name="psw">
+    <input class="input-field" type="password" placeholder="Password" name="password">
   </div>
 
   <button type="submit" class="btn">Login</button>

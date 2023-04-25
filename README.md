@@ -1,19 +1,22 @@
-# Tech Blog
+# TechUP
 
 ## Description
 
-<!-- Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide: -->
-
+TechUP is the tech blog that offers the best way to keep up on tech!  Read, post, and comment!  Meet others in the tech industry with similar interests.
 
 ## Usage
 
-<!-- Provide instructions and examples for use. Include screenshots as needed.
+Login.
+![login page](./public/images/s1.jpg)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Use your dashboard to view any posts you've made or create a new post.
+![dashboard page](./public/images/s2.jpg)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ``` -->
+View all blog posts.
+![view of all blog posts](./public/images/s3.jpg)
+
+Make a comment on a post.
+![make a comment on a post](./public/images/s4.jpg)
 
 ## Credits
 
@@ -28,6 +31,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - https://www.youtube.com/watch?v=hKYjSgyCd60
 - https://github.com/jdtdesigns/basic_mvc_auth_example
 - https://www.w3schools.com/howto/howto_css_form_icon.asp
+- https://www.npmjs.com/package/moment
+- https://css-tricks.com/examples/BoxSizing/
+- tutoring 24APR2023
+- office hours 25APR2023
 
 ## License
 

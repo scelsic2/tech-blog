@@ -26,27 +26,32 @@ router.post('/login', async (req, res) => {
   // If they pass our checks, we store their user id to the session and then redirect
   // them to the dashboard
   req.session.user_id = user.id;
+  req.session.userEmail = user.email;
 
   res.redirect('/dashboard');
 });
 
 // Route to receive the register form information - Triggered by the Register page form
-router.post('/auth/register', async (req, res) => {
+router.post('/register', async (req, res) => {
   // Form data - email, password
   const user_data = req.body;
 
   // Try to run this code block - if any of it throws an error, the catch will trigger
   try {
+    console.log('creating new user');
     const user = await User.create(user_data);
 
     // Once the user is created, we store their id to the session
     // and redirect them to the protected dashboard
     req.session.user_id = user.id;
-    res.redirect('/private/dashboard');
+    req.session.userEmail = user.email;
+
+    res.redirect('/dashboard');
   } catch (err) {
+    console.log(err);
     // If any error is thrown when creating the user
     // we redirect them to the login page
-    res.redirect('/auth/login');
+    res.redirect('/login');
   }
 });
 

@@ -12,25 +12,40 @@
 </header>
 
 <section class="posts-body">
-    <div class="post-wrapper">
-      <a href="/posts/{{this.id}}">
-        <div class="post">
-          <div class="post-title-and-info">
-            <h2>{{title}}</h2>
-            </a>
-            <p>{{userName}}</p>
-          </div>
-        </div>
-        <div class="post-content">
-          <p>{{text}}</p>
-        </div>
+  <div class="post-wrapper">
+    <a href="/posts/{{this.id}}">
+      <div class="post">
+        <div class="post-title-and-info">
+          <h2>{{title}}</h2>
+    </a>
+    <p>{{userName}}</p>
+  </div>
+  </div>
+
+  <div class="post-content">
+    <p>{{text}}</p>
+  </div>
+  </div>
+  <p class="timestamp">{{updatedAt}}</p>
+
+  <div class="comments">
+    <h3>Comments:</h3>
+    {{#each this.comment}}
+    <div class="comment-content">
+      <p>{{comment_text}}</p>
+      <p>{{user_email}}</p>
+      <p>{{updatedAt}}</p>
     </div>
+  </div>
+  {{/each}}
+  </div>
+
+  <form action="/posts/${this.id}" method="POST">
+    <div class="comment-wrapper">
+      <h3 class="h3-comments">Leave a Comment:</h3>
+      <textarea placeholder="What would you like to say?" id="comment" name="comment" rows="3"></textarea>
+      <button type="submit" class="post-btn" type="button">Post</button>
+    </div>
+  </form>
+
 </section>
-
-
-
-{{!-- <body>
-  <h1>{{title}}</h1>
-  <p>{{userName}}</p>
-  <p>{{text}}</p>
-</body> --}}

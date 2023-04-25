@@ -1,0 +1,33 @@
+{{!-- https://www.w3schools.com/howto/howto_css_form_icon.asp --}}
+
+    <header>
+        <div class="title">
+          <h1>techUP</h1>
+          <p>The best way to keep UP in tech!</p>   
+        </div>
+        
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    </header>
+
+<form method="POST" action="/register">
+{{!-- <form action="/action_page.php"> --}}
+  <h2 class="reg-h2">Register</h2>
+  {{!-- <div class="input-container">
+    {{ <i class="fa fa-user icon"></i> }}
+    <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div> --}}
+
+  <div class="input-container">
+    {{!-- <i class="fa fa-envelope icon"></i> --}}
+    <input class="input-field" type="text" placeholder="Email" name="email">
+  </div>
+
+  <div class="input-container input-container-reg">
+    {{!-- <i class="fa fa-key icon"></i> --}}
+    <input class="input-field" type="password" placeholder="Password" name="password">
+  </div>
+
+  <button type="submit" class="btn">Register</button>
+</form>

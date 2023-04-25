@@ -20,16 +20,16 @@ User.init({
 
     password: {
         type: DataTypes.STRING,
-        validate: {
-            length: 8
-        },
+        //validate: {
+            //length: 8
+        //},
         allowNull: false
     }
 },{
     sequelize: db,
     modelName: 'user',
     hooks: {
-        async beforeCreate() {
+        async beforeCreate(user) {
              const encrypted_pass = await bcrypt.hash(user.password, 10);
              user.password = encrypted_pass;
         }

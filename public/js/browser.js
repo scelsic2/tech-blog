@@ -1,8 +1,8 @@
-postWrapper = document.querySelector(".post-wrapper");
+// postWrapper = document.querySelector(".post-wrapper");
 
-for (i = 0; i < array.length; index++) {
-    const element = array[i];
+// for (i = 0; i < array.length; index++) {
+//     const element = array[i];
     
-}
+// }
 
-postWrapper.addEventListener("click", getPost())
+// postWrapper.addEventListener("click", getPost())

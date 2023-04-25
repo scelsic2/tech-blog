@@ -122,3 +122,71 @@ form {
 .btn:hover {
   opacity: 1;
 }
+
+.timestamp {
+    text-align: right;
+    color: var(--lightest);
+    padding-bottom: 20px;
+}
+
+.h3-comments {
+    color: var(--lightest);
+    margin-bottom: 5px;
+    padding-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.post-btn {
+    margin-top: 10px;
+    padding: 4px;
+    width: 50px;
+}
+
+.post-content {
+    color: var(--darkest);
+}
+
+.comments {
+    /* border: 5px solid var(--darkest); */
+    color: var(--lightest);
+    border-top: 2px solid var(--lightest);
+    padding-top: 20px;
+}
+
+.comments h3 {
+    padding-bottom: 10px;
+}
+
+.comment-content {
+    background-color: var(--lightest);
+    color: var(--darkest);
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.comment-wrapper h3 {
+    border-top: 2px solid var(--lightest);
+}
+
+a h5 {
+    text-decoration: none;
+}
+
+.welcome {
+    color: var(--lightest);
+}
+
+.make-a-post-wrapper {
+    margin: 20px;
+}
+
+.reg-h2 {
+    color: var(--lightest);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
