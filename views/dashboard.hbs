@@ -31,10 +31,10 @@
   {{/each}}
 </section>
 
-<form action="/dashboard/${this.id}" method="POST">
+<form class="blog-form" action="/dashboard/{{this.id}}" method="POST">
   <div class="comment-wrapper make-a-post-wrapper">
     <h3 class="h3-comments h3-post">Write a Post:</h3>
-    <textarea placeholder="What would you like to say?" id="comment" name="comment" rows="3"></textarea>
+    <textarea placeholder="What would you like to say?" id="text" name="text" rows="3"></textarea> 
     <button type="submit" class="post-btn" type="button">Post</button>
   </div>
 </form>

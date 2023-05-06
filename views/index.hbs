@@ -14,16 +14,16 @@
 <section class="posts-body">
   {{#each blogPost}}
     <div class="post-wrapper">
-      <a href="/posts/{{this.id}}">
+      <a href="/posts/{{id}}">
         <div class="post">
           <div class="post-title-and-info">
-            <h4>{{this.title}}</h4>
+            <h4>{{title}}</h4>
             </a>
-            <p>{{this.userName}}</p>
+            <p>{{userName}}</p>
           </div>
         </div>
         <div class="post-content">
-          <p>{{this.text}}</p>
+          <p>{{text}}</p>
         </div>
     </div>
   {{/each}}
