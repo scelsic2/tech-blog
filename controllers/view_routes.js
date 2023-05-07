@@ -32,7 +32,7 @@ router.get("/dashboard", async (req, res) => {
   }
 
   if (req.session.user_id == null) {
-    res.redirect("/");
+    res.redirect("/login");
     return;
   }
 
@@ -123,8 +123,6 @@ router.get("/register", async(req, res) => {
   res.render("register");
 });
 
-router.get("/logout", async(req, res) => {
-  res.render("logout");
-});
+
 
 module.exports = router;

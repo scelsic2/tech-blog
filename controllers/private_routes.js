@@ -31,13 +31,15 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
   });
 });
 
-// Handle comment submission
-router.post("/dashboard", async (req, res) => {
+// Handle blog submission
+router.post("/dashboard", isAuthenticated, async (req, res) => {
   try {
     // Get the user making the post
     const user = await User.findOne({
-      where: { id: req.session.user_id }
+      where: { id: req.session.id }
     });
+
+console.log(req.session.id)
 
     // Validate input
     if (!user) {
@@ -63,11 +65,13 @@ router.post("/dashboard", async (req, res) => {
   }
 });
 
-// Handle form submission
-router.post("/posts/:id", async (req, res) => {
+// Handle comment submission
+router.post("/posts/:id", isAuthenticated, async (req, res) => {
   try {
     // Get the blog post
     const post = await BlogPost.findByPk(req.params.id);
+
+    console.log(' is this undefined? ', req.session.user_id);
 
     // Get the user making the comment
     const user = await User.findOne({

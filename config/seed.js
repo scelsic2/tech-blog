@@ -23,7 +23,7 @@ db.sync({ force: true }).then(() => {
     
   ]).then(() => {
     console.log('----------POSTS SEEDED!----------');
-    process.exit();
+    // process.exit();
   });
 
   User.bulkCreate([
@@ -42,7 +42,7 @@ db.sync({ force: true }).then(() => {
     
   ]).then(() => {
     console.log('----------USERS SEEDED!----------');
-    process.exit();
+    // process.exit();
   });
 
   Comment.bulkCreate([

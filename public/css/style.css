@@ -218,3 +218,8 @@ a h5 {
     width: 70%;
     margin: auto;
 }
+
+.logout-text {
+    color: var(--lightest);
+    text-align: center;
+}
