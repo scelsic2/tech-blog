@@ -19,39 +19,20 @@ router.get("/", async (req, res) => {
     raw: true, 
   });
 
+
+function iWantMyDate(){
+   for(i = 0; i < posts.length; i++) {
+     let formattedDate = moment(posts[i].updatedAt).format('MMMM Do YYYY, h:mm a');
+    posts[i].updatedAt = formattedDate
+     console.log(posts)
+  }
+  
+}
+ 
+
   res.render("index", {
     blogPost: posts,
-  });
-});
-
-router.get("/dashboard", async (req, res) => {
-  if (!req.secure.viewCount) {
-    req.session.viewCount = 1;
-  } else {
-    req.session.viewCount += 1;
-  }
-
-  if (req.session.user_id == null) {
-    res.redirect("/login");
-    return;
-  }
-
-  let posts;
-  if (req.session.userEmail) {
-    posts = await BlogPost.findAll({
-      raw: true,
-      where: {
-        userName: req.session.userEmail,
-      },
-    });
-  } else {
-    posts = await BlogPost.findAll({
-      raw: true,
-    });
-  }
-
-  res.render("dashboard", {
-    blogPost: posts,
+    updatedAt: iWantMyDate(), 
   });
 });
 
@@ -109,10 +90,6 @@ router.get("/posts/:id", async (req, res) => {
     res.status(404).send("Blog post not found");
   }
   
-});
-
-router.get("/dashboard", async (req, res) => {
-  res.render("dashboard");
 });
 
 router.get("/login", async (req, res) => {

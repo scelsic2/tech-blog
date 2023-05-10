@@ -223,3 +223,15 @@ a h5 {
     color: var(--lightest);
     text-align: center;
 }
+
+#title {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.timestamp2 {
+    padding-top: 10px;
+    text-align: end;
+    font-size: small;
+}

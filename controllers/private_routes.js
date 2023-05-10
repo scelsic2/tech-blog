@@ -20,14 +20,44 @@ function isAuthenticated(req, res, next) {
 }
 
 router.get('/dashboard', isAuthenticated, async (req, res) => {
+  if (!req.secure.viewCount) {
+    req.session.viewCount = 1;
+  } else {
+    req.session.viewCount += 1;
+  }
+
+  if (req.session.user_id == null) {
+    res.redirect("/login");
+    return;
+  }
+
+  console.log(' how can I find a user without an id ', req.session)
+
   // Get the user by their id that is stored to the session
   const user = await User.findByPk(req.session.user_id);
 
   // Render the dashboard view and share the user's email address
   // so we can output it in the hbs html
  
-  res.render('/dashboard', {
-    email: user.email
+  console.log(' where is my data ', user);
+
+  let posts;
+  if (req.session.userEmail) {
+    posts = await BlogPost.findAll({
+      raw: true,
+      where: {
+        userName: req.session.userEmail,
+      },
+    });
+  } else {
+    posts = await BlogPost.findAll({
+      raw: true,
+    });
+  }
+
+  res.render('dashboard', {
+    email: user.email,
+    blogPost: posts,
   });
 });
 
@@ -36,10 +66,11 @@ router.post("/dashboard", isAuthenticated, async (req, res) => {
   try {
     // Get the user making the post
     const user = await User.findOne({
-      where: { id: req.session.id }
+      where: { id: req.session.user_id }
     });
 
-console.log(req.session.id)
+  
+    console.log('user.userName ' + user.email)
 
     // Validate input
     if (!user) {
@@ -52,7 +83,7 @@ console.log(req.session.id)
     //const formattedDatePost= moment().format('MMMM Do YYYY, h:mm a');
     const post = await BlogPost.create({
       title: req.body.title,
-      userName: user.userName,
+      userName: user.email,
       text: req.body.text
       //,updatedAt: formattedDatePost, 
     });
