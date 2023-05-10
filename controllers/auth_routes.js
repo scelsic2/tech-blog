@@ -55,13 +55,20 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Route to log a user out
-router.get('/auth/logout', (req, res) => {
-  // Remove all data from the session
-  req.session.destroy();
 
-  // Redirect them back to the homepage
-  res.redirect('/');
+
+// Route to log a user out
+router.get('/logout', async (req, res) => {
+  // Remove all data from the session
+  //todo: ns this isn't working. review with nick 
+  console.log('logging out')
+  try {
+  req.session.destroy();
+  res.clearCookie(this.cookie), {path: '/'};
+  res.redirect('/')
+  } catch(e) {
+    console.log('errors ', e);
+  }
 });
 
 module.exports = router;

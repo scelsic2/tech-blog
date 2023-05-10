@@ -7,7 +7,6 @@ const private_routes = require('./controllers/private_routes');
 const sequelize = require('./config/connection');
 const { engine } = require('express-handlebars');
 const session = require("express-session");
-// const { sequelize } = require('./models/BlogPost');
 const { Sequelize } = require('sequelize');
 const SequelizeStore = require("connect-session-sequelize")(session.Store)
 

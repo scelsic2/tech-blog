@@ -35,6 +35,9 @@ Make a comment on a post.
 - https://css-tricks.com/examples/BoxSizing/
 - tutoring 24APR2023
 - office hours 25APR2023
+- tutoring 05MAY2023
+- https://www.npmjs.com/package/express-session
+- https://www.youtube.com/watch?v=IPAvfcodcI8
 
 ## License
 
